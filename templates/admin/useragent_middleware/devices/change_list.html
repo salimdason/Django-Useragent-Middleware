@@ -3,56 +3,65 @@
 
 {% block extrahead %}
 {{ block.super }}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/chart.min.js">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-<script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/Chart.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 
+<script>
 document.addEventListener('DOMContentLoaded', () => {
-    const ctx = document.getElementById('myChart').getContext('2d');
-    # Render Chart
-    const chart = new Chart(ctx, {
+  const ctx = document.getElementById('myChart').getContext('2d');
+
+  const chartData = {{ stat_data | safe }};
+
+  let arr = []
+
+  for (let value of Object.values(chartData[0])) {
+    arr.push(value);
+  }
+
+  // Render the chart
+  const chart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Windows', 'Mac', 'Iphone', 'Android', 'Other'],
-        datasets: [{
-            label: 'Site User Device OS',
-            data: [12, 19, 3, 5, 2, 3],
+      labels: ['Windows', 'Mac', 'Iphone', 'Android', 'Other'],
+      datasets: [{
+            label: 'Site User Agent Stats',
+            data: arr,
             backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
                 'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(153, 102, 255, 0.2)'
             ],
             borderColor: [
+                'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 2
         }]
     },
     options: {
-        scales: {
-            y: {
+    scales: {
+        yAxes: [{
+            ticks: {
                 beginAtZero: true
             }
-        }
+        }]
     }
+},
+  });
 });
-
 </script>
-
 {% endblock %}
 
 {% block content %}
-
-<div style="width: 80%">
-    <canvas style="margin-bottom: 30px; width: 60%; height: 50%;" id="myChart"></canvas>
+<!-- Render our chart -->
+<div style="width: 100%;">
+  <canvas style="margin-bottom: 30px; width: 60%; height: 50%;" id="myChart"></canvas>
 </div>
-
+<!-- Render the rest of the ChangeList view -->
 {{ block.super }}
-
 {% endblock %}
