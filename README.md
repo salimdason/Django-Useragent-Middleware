@@ -31,11 +31,18 @@ Install dependencies
   pip install -r Requirements/local.txt
 ```
 
+Create superuser
+```bash
+  python manage.py createsuperuser
+```
+
 Start the server
 
 ```bash
   python manage.py runserver
 ```
+
+Login to admin interface: localhost:8000/admin
 
 ## Release History
 
