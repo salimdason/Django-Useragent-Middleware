@@ -1,7 +1,7 @@
 from .models import devices
 from django.db.models import F
 
-#
+
 class UserAgentMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
