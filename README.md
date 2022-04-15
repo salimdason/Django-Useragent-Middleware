@@ -47,15 +47,7 @@ Login to admin interface: localhost:8000/admin
 ## Release History
 
 * 0.0.1
-    * Work in progress
-
-## Meta
-
-Your Name – [@Moedason](https://twitter.com/moedason) – salimdason@outlook.com
-
-Distributed under the MIT license. See ``LICENSE`` for more information.
-
-[https://github.com/salimdason](https://github.com/dbader/)
+   
 
 ## Contributing
 
@@ -73,9 +65,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [wiki]: https://github.com/yourname/yourproject/wiki
 
-## Lessons Learned
 
-I will come back to this in the future. 
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/salimdason/)
