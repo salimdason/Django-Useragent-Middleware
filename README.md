@@ -9,9 +9,13 @@ This is a demo on how to great a custom middleware in django.
 
 ## Usage example
 
+<<<<<<< HEAD
 A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 
 _For more examples and usage, please refer to the [Wiki][wiki]._
+=======
+Screenshots and examples soon.
+>>>>>>> 3bce1a960e0127415827d979fb4cbf39ee3bb962
 
 ## Run Locally
 
